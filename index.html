@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio de Moundher Mghezzi-Larafi, développeur web en recherche d'alternance en Île-de-France.">
+<title>Moundher Mghezzi-Larafi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --ink:#111A24; --muted:#56626F; --line:#D3DAE2;
+  --accent:#2F4DD8; --accent-soft:#E3E8FB; --signal:#E08A1E;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1117; --surface:#141B24; --ink:#E4EAF1; --muted:#909CAB; --line:#243041;
+    --accent:#8AA2FF; --accent-soft:#1B2442; --signal:#F2AE4E; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1117; --surface:#141B24; --ink:#E4EAF1; --muted:#909CAB; --line:#243041;
+  --accent:#8AA2FF; --accent-soft:#1B2442; --signal:#F2AE4E; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px}
+.wrap{max-width:1080px;margin-inline:auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);margin-inline:-20px;padding:12px 20px;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mark{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--signal)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{font-size:14px;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.label b{color:var(--accent);font-weight:500}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding-block:64px 56px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:.98;letter-spacing:-.025em;margin:14px 0 22px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:40ch;margin:0 0 28px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;background:var(--accent-soft);color:var(--ink);padding:6px 12px;border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px color-mix(in srgb,var(--signal) 25%,transparent)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:600 15px var(--body);padding:12px 20px;border-radius:10px;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+
+.sim{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sim canvas{display:block;width:100%;aspect-ratio:4/3.2;touch-action:none;cursor:grab}
+.sim canvas:active{cursor:grabbing}
+.sim .hud{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sim .hud b{color:var(--ink);font-weight:500}
+
+/* SECTIONS */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;line-height:1.1;margin:6px 0 0;text-wrap:balance}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{margin:0 0 14px;max-width:62ch}
+.facts{display:grid;gap:0;align-content:start;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts dt{color:var(--muted)} .facts dd{margin:0;font-weight:500;text-align:right}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card .kind{font-family:var(--mono);font-size:11.5px;color:var(--signal);letter-spacing:.06em;text-transform:uppercase}
+.card h3{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.15;margin:0;letter-spacing:-.01em}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .spec{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:var(--bg);border-radius:8px;padding:8px 10px;overflow-x:auto;white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.card.web{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.card .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent)}
+.card .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#2FA36B}
+.card-links{display:flex;gap:18px;flex-wrap:wrap;padding-top:4px;border-top:1px solid var(--line);margin-top:4px;padding-top:12px}
+.card-links a{font-weight:600;font-size:14px;text-decoration:none}
+.card-links a:hover{text-decoration:underline}
+.tag{font-family:var(--mono);font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+.skills h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.skills ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.skills li{font-size:15px;display:flex;justify-content:space-between;gap:8px}
+.skills li small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid}
+.timeline li{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.timeline li:first-child{border-top:1px solid var(--line)}
+.timeline .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.timeline h3{margin:0;font-size:17px;font-weight:600}
+.timeline p{margin:4px 0 0;color:var(--muted);font-size:15px}
+
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.contact p.big{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.15;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.links{display:grid;gap:12px}
+.link-row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;flex-wrap:wrap}
+.link-row .v{font-family:var(--mono);font-size:14px;word-break:break-all;user-select:all}
+.copy{font:500 13px var(--body);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero,.about,.contact{grid-template-columns:1fr;gap:32px}
+  .hero{padding-block:40px}
+  .skills{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:560px){
+  .projects,.skills{grid-template-columns:1fr}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+  nav{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){ .btn:hover{transform:none} }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">moundher<span>.</span>dev</a>
+    <nav aria-label="Sections">
+      <a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div>
+      <span class="status"><i></i>Recherche une alternance · Île-de-France</span>
+      <h1>Moundher Mghezzi&#8209;Larafi, <em>développeur web</em> en devenir.</h1>
+      <p class="lede">Formé en informatique, du C++ à l'OpenGL en passant par le deep learning. J'aime construire des choses qui bougent : simulations physiques, jeux, interfaces. Aujourd'hui je me spécialise dans le développement web.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projets">Voir mes projets</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <figure class="sim" style="margin:0">
+      <canvas id="cloth" aria-label="Simulation interactive d'un tissu masse-ressort. Glissez pour tirer le tissu."></canvas>
+      <figcaption class="hud">
+        <span>Simulation masse-ressort · Verlet</span>
+        <span><b id="nMass">0</b> masses · <b id="nSpring">0</b> ressorts</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="block" id="apropos">
+    <div class="sec-head"><div><div class="label"><b>01</b> · À propos</div><h2>Un profil technique, un objectif clair.</h2></div></div>
+    <div class="about">
+      <div>
+        <p>J'ai obtenu une Licence et un Master 1 en informatique en Algérie, puis j'ai suivi le Master 2 Sciences de l'image à l'Université Gustave Eiffel.</p>
+        <p>Pendant mes études, j'ai surtout travaillé sur la simulation et le graphisme : un moteur physique en C++ avec OpenGL, un jeu 3D sous Unity, des simulations d'essaims. Ces projets m'ont appris à structurer du code, à déboguer patiemment et à aller au bout d'une idée.</p>
+        <p>Je veux maintenant mettre ces bases au service du développement web, en alternance, dans une équipe où je peux apprendre et être utile rapidement.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Recherche</dt><dd>Alternance développement web</dd></div>
+        <div><dt>Localisation</dt><dd>Île-de-France</dd></div>
+        <div><dt>Rythme</dt><dd>Flexible</dd></div>
+        <div><dt>Langues</dt><dd>Arabe, français</dd></div>
+        <div><dt>Mobilité</dt><dd>Permis B, véhiculé</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="projets">
+    <div class="sec-head"><div><div class="label"><b>02</b> · Projets</div><h2>Ce que j'ai construit.</h2></div></div>
+    <div class="projects">
+      <article class="card web">
+        <div class="top"><span class="kind">Application web</span><span class="live">En ligne</span></div>
+        <h3>Météo</h3>
+        <p>Recherche de ville avec suggestions, météo actuelle, prévisions sur 24 heures et sur 7 jours, géolocalisation et villes favorites. Données en direct depuis l'API Open-Meteo.</p>
+        <div class="spec">fetch · AbortController · debounce · déploiement continu</div>
+        <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">API REST</span><span class="tag">GitHub Actions</span></div>
+        <div class="card-links"><a href="https://moundhermghezzi321-oss.github.io/meteo/">Voir le site ↗</a><a href="https://github.com/moundhermghezzi321-oss/meteo">Code source ↗</a></div>
+      </article>
+      <article class="card web">
+        <div class="top"><span class="kind">Application web</span><span class="live">En ligne</span></div>
+        <h3>Tableau Kanban</h3>
+        <p>Gestion de tâches en trois colonnes, avec priorités, glisser-déposer, recherche, modification directe et barre de progression. Sauvegarde automatique dans le navigateur.</p>
+        <div class="spec">DOM · délégation d'événements · drag &amp; drop · localStorage</div>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+        <div class="card-links"><a href="https://moundhermghezzi321-oss.github.io/kanban/">Voir le site ↗</a><a href="https://github.com/moundhermghezzi321-oss/kanban">Code source ↗</a></div>
+      </article>
+      <article class="card">
+        <div class="top"><span class="kind">Moteur physique</span></div>
+        <h3>Drapeau en simulation masse-ressort</h3>
+        <p>Un tissu modélisé par une grille de masses reliées par des ressorts, animé en temps réel. C'est ce même principe qui fait bouger l'animation en haut de cette page.</p>
+        <div class="spec">x(t+dt) = 2x − x(t−dt) + a·dt²</div>
+        <div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">GLM</span><span class="tag">SDL2</span></div>
+      </article>
+      <article class="card">
+        <div class="top"><span class="kind">Jeu vidéo 3D</span></div>
+        <h3>Subterra</h3>
+        <p>Un jeu de plateforme souterrain où le joueur se déplace avec un grappin. Gestion de la physique du câble, des contrôles et de la conception des niveaux.</p>
+        <div class="spec">grappin · physique · level design</div>
+        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+      </article>
+      <article class="card">
+        <div class="top"><span class="kind">Simulation multi-agents</span></div>
+        <h3>Simulations d'essaims</h3>
+        <p>Des centaines d'agents qui suivent des règles locales simples et produisent un comportement collectif : regroupement, alignement, évitement.</p>
+        <div class="spec">cohésion · alignement · séparation</div>
+        <div class="tags"><span class="tag">NetLogo</span></div>
+      </article>
+      <article class="card">
+        <div class="top"><span class="kind">Recherche · IA</span></div>
+        <h3>Présentation sur le méta-apprentissage</h3>
+        <p>Étude et présentation des méthodes où un modèle « apprend à apprendre », pour s'adapter à une nouvelle tâche avec très peu d'exemples.</p>
+        <div class="spec">few-shot learning · deep learning</div>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Deep learning</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="competences">
+    <div class="sec-head"><div><div class="label"><b>03</b> · Compétences</div><h2>Ma boîte à outils.</h2></div></div>
+    <div class="skills">
+      <div><h3>Web</h3><ul><li>HTML / CSS</li><li>JavaScript</li><li>React</li><li>API REST</li><li>Vite</li></ul></div>
+      <div><h3>Langages</h3><ul><li>C++</li><li>C#</li><li>Python</li></ul></div>
+      <div><h3>Graphisme &amp; simulation</h3><ul><li>OpenGL</li><li>GLM</li><li>SDL2</li><li>Unity</li><li>NetLogo</li></ul></div>
+      <div><h3>IA &amp; image</h3><ul><li>PyTorch</li><li>Deep learning</li><li>Traitement d'image</li></ul></div>
+      <div><h3>Outils</h3><ul><li>Git &amp; GitHub</li><li>GitHub Pages &amp; Actions</li><li>Canva / Figma</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="parcours">
+    <div class="sec-head"><div><div class="label"><b>04</b> · Parcours</div><h2>Formation.</h2></div></div>
+    <ol class="timeline">
+      <li><span class="when">Master 2</span><div><h3>Sciences de l'image</h3><p>Université Gustave Eiffel (formation suivie). Traitement d'image, vision par ordinateur, deep learning.</p></div></li>
+      <li><span class="when">Master 1</span><div><h3>Informatique</h3><p>Algérie.</p></div></li>
+      <li><span class="when">Licence</span><div><h3>Informatique</h3><p>Algérie.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="contact">
+      <div><div class="label"><b>05</b> · Contact</div><p class="big" style="margin-top:10px">Vous cherchez un alternant motivé ? Écrivez-moi.</p></div>
+      <div class="links">
+        <div class="link-row"><span class="v" id="mail">moundhermghezzi321@gmail.com</span><button class="copy" id="copyMail" type="button">Copier</button></div>
+        <div class="link-row"><a class="v" href="https://github.com/moundhermghezzi321-oss">github.com/moundhermghezzi321-oss</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><span>© 2026 Moundher Mghezzi-Larafi</span><span>HTML · CSS · JavaScript, sans framework</span></footer>
+
+<script>
+/* Copier l'email */
+document.getElementById('copyMail').addEventListener('click', e => {
+  const t = document.getElementById('mail').textContent, b = e.currentTarget;
+  const done = () => { b.textContent = 'Copié'; setTimeout(() => b.textContent = 'Copier', 1600); };
+  try { navigator.clipboard.writeText(t).then(done, () => sel()); } catch { sel(); }
+  function sel(){ const r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+});
+
+/* Simulation de tissu masse-ressort (intégration de Verlet) */
+(() => {
+  const cv = document.getElementById('cloth'), ctx = cv.getContext('2d');
+  const COLS = 22, ROWS = 15, ITER = 4;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, gap, pts = [], sticks = [], drag = null, t = 0;
+
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+  function build(){
+    const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = r.width * dpr; cv.height = r.height * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    W = r.width; H = r.height; gap = Math.min((W * .7) / (COLS - 1), (H * .62) / (ROWS - 1));
+    const ox = W * .16, oy = H * .14;
+    pts = []; sticks = [];
+    for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) {
+      const px = ox + x * gap, py = oy + y * gap;
+      pts.push({x:px, y:py, px, py, pin: x === 0 && (y === 0 || y === ROWS - 1 || y % 3 === 0)});
+    }
+    const id = (x,y) => y * COLS + x;
+    for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) {
+      if (x < COLS - 1) sticks.push([id(x,y), id(x+1,y), gap]);
+      if (y < ROWS - 1) sticks.push([id(x,y), id(x,y+1), gap]);
+    }
+    document.getElementById('nMass').textContent = pts.length;
+    document.getElementById('nSpring').textContent = sticks.length;
+  }
+
+  function step(){
+    t += 0.016;
+    const gust = 0.9 + 0.6 * Math.sin(t * 0.9) + 0.35 * Math.sin(t * 2.3);
+    for (const p of pts) {
+      if (p.pin) continue;
+      const vx = (p.x - p.px) * .99, vy = (p.y - p.py) * .99;
+      p.px = p.x; p.py = p.y;
+      const wx = gust * 0.09 * (1 + 0.5 * Math.sin(p.y * 0.05 + t * 3));
+      const wy = 0.05 * Math.sin(p.x * 0.04 + t * 2.1);
+      p.x += vx + wx; p.y += vy + 0.14 + wy;
+    }
+    if (drag) { const p = pts[drag.i]; p.x = drag.x; p.y = drag.y; }
+    for (let k = 0; k < ITER; k++) for (const [a,b,len] of sticks) {
+      const A = pts[a], B = pts[b], dx = B.x - A.x, dy = B.y - A.y;
+      const d = Math.hypot(dx, dy) || 1, diff = (d - len) / d * 0.5;
+      const ox = dx * diff, oy = dy * diff;
+      if (!A.pin) { A.x += ox; A.y += oy; }
+      if (!B.pin) { B.x -= ox; B.y -= oy; }
+    }
+  }
+
+  function draw(){
+    const accent = css('--accent'), signal = css('--signal'), line = css('--line'), muted = css('--muted');
+    ctx.clearRect(0,0,W,H);
+    // mât
+    ctx.strokeStyle = muted; ctx.lineWidth = 3; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(pts[0].x - 2, pts[0].y - 18); ctx.lineTo(pts[0].x - 2, H - 16); ctx.stroke();
+    // ressorts, colorés selon l'étirement
+    ctx.lineWidth = 1.2;
+    for (const [a,b,len] of sticks) {
+      const A = pts[a], B = pts[b], s = Math.hypot(B.x-A.x, B.y-A.y) / len;
+      ctx.strokeStyle = s > 1.04 ? signal : accent;
+      ctx.globalAlpha = s > 1.04 ? 0.95 : 0.55;
+      ctx.beginPath(); ctx.moveTo(A.x, A.y); ctx.lineTo(B.x, B.y); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = accent;
+    for (const p of pts) { ctx.beginPath(); ctx.arc(p.x, p.y, p.pin ? 3 : 1.6, 0, 6.283); ctx.fill(); }
+    if (drag) { const p = pts[drag.i]; ctx.fillStyle = signal; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,6.283); ctx.fill(); }
+  }
+
+  function pos(e){ const r = cv.getBoundingClientRect(); return {x:e.clientX - r.left, y:e.clientY - r.top}; }
+  cv.addEventListener('pointerdown', e => {
+    const m = pos(e); let best = -1, bd = 1e9;
+    pts.forEach((p,i) => { if (p.pin) return; const d = (p.x-m.x)**2 + (p.y-m.y)**2; if (d < bd) { bd = d; best = i; } });
+    if (bd < 60*60) { drag = {i:best, ...m}; cv.setPointerCapture(e.pointerId); }
+  });
+  cv.addEventListener('pointermove', e => { if (drag) Object.assign(drag, pos(e)); });
+  const end = () => drag = null;
+  cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+
+  function loop(){ step(); draw(); requestAnimationFrame(loop); }
+  build();
+  for (let i = 0; i < 160; i++) step();
+  if (reduce) { draw(); new ResizeObserver(() => { build(); for (let i=0;i<160;i++) step(); draw(); }).observe(cv); }
+  else { new ResizeObserver(build).observe(cv); loop(); }
+})();
+</script>
+
+</body>
+</html>
